@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Khade Fabrication — gates, railings, invisible grills, sheds, custom fabrication and welding services. Contact us for a quotation.">
+  <title>Khade Fabrication | Quality Metal Work</title>
+  <style>
+    :root {
+      --ink: #17212b;
+      --muted: #5d6873;
+      --accent: #e46b2e;
+      --accent-dark: #bd4c18;
+      --paper: #f5f6f7;
+      --white: #fff;
+      --line: #e2e6e9;
+      --navy: #101820;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: var(--ink); line-height: 1.6; background: var(--white); }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    .topbar { background: var(--navy); color: #e8edf1; font-size: .88rem; padding: 9px 0; }
+    .topbar-inner { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    header { background: #fff; border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 5; }
+    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; letter-spacing: -.4px; font-size: 1.2rem; }
+    .brand-mark { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 10px; background: var(--accent); color: white; font-size: 1.25rem; font-weight: 900; }
+    .brand small { display: block; color: var(--muted); font-size: .72rem; font-weight: 600; letter-spacing: 1.8px; text-transform: uppercase; }
+    nav { display: flex; gap: 25px; align-items: center; font-size: .94rem; font-weight: 700; }
+    nav a:hover { color: var(--accent-dark); }
+    .btn { display: inline-flex; justify-content: center; align-items: center; gap: 8px; padding: 13px 19px; border-radius: 7px; font-weight: 800; border: 2px solid transparent; transition: .2s ease; cursor: pointer; }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-primary:hover { background: var(--accent-dark); transform: translateY(-1px); }
+    .btn-outline { border-color: rgba(255,255,255,.65); color: white; }
+    .btn-outline:hover { background: white; color: var(--navy); }
+    .hero { color: white; background: linear-gradient(100deg, rgba(13,22,30,.96) 0%, rgba(13,22,30,.88) 52%, rgba(13,22,30,.34) 100%), url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=2000&q=85') center/cover; }
+    .hero-content { max-width: 720px; padding: 100px 0 105px; }
+    .eyebrow { color: var(--accent); font-size: .8rem; font-weight: 900; letter-spacing: 2.4px; text-transform: uppercase; }
+    h1 { margin: 15px 0 20px; font-size: clamp(2.5rem, 5.8vw, 4.6rem); line-height: 1.06; letter-spacing: -2px; }
+    .hero p { color: #e1e7eb; max-width: 620px; font-size: 1.12rem; margin: 0 0 29px; }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .trust-row { display: flex; gap: 24px; flex-wrap: wrap; margin-top: 34px; color: #edf0f2; font-size: .9rem; }
+    .trust-row span::before { content: "✓"; color: #ff9a63; font-weight: 900; margin-right: 8px; }
+    section { padding: 78px 0; }
+    .section-head { max-width: 680px; margin-bottom: 34px; }
+    h2 { font-size: clamp(1.9rem, 3.4vw, 2.8rem); line-height: 1.15; letter-spacing: -1px; margin: 9px 0 13px; }
+    .section-head p, .muted { color: var(--muted); }
+    .services { background: var(--paper); }
+    .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .service-card { background: white; padding: 25px; border: 1px solid var(--line); border-radius: 12px; }
+    .service-icon { display: grid; place-items: center; width: 50px; height: 50px; border-radius: 10px; background: #fff0e8; color: var(--accent-dark); font-size: 1.5rem; margin-bottom: 17px; }
+    .service-card h3 { margin: 0 0 8px; font-size: 1.13rem; }
+    .service-card p { margin: 0; color: var(--muted); font-size: .95rem; }
+
+    .projects { background: #fff; }
+    .project-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .project-card { overflow: hidden; border: 1px solid var(--line); border-radius: 12px; background: white; }
+    .project-card img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: #e7eaed; }
+    .project-card .project-copy { padding: 17px 18px 19px; }
+    .project-card h3 { margin: 0 0 5px; font-size: 1.05rem; }
+    .project-card p { color: var(--muted); margin: 0; font-size: .92rem; }
+    .photo-note { border-left: 3px solid var(--accent); padding: 12px 15px; background: #fff4ee; color: #57321f; border-radius: 0 7px 7px 0; font-size: .9rem; margin-top: 22px; }
+    @media (max-width: 780px) { .project-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .project-grid { grid-template-columns: 1fr; } }
+
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 55px; align-items: center; }
+    .about-image { min-height: 370px; border-radius: 14px; background: url('https://images.unsplash.com/photo-1567789884554-0b844b597180?auto=format&fit=crop&w=1100&q=85') center/cover; }
+    .check-list { padding: 0; list-style: none; margin: 24px 0 0; }
+    .check-list li { margin: 12px 0; font-weight: 700; }
+    .check-list li::before { content: "✓"; display: inline-grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: #e7f5eb; color: #24733b; margin-right: 10px; }
+    .cta-band { background: var(--navy); color: white; padding: 46px 0; }
+    .cta-inner { display: flex; align-items: center; justify-content: space-between; gap: 25px; }
+    .cta-inner h2 { margin: 0 0 8px; font-size: clamp(1.6rem, 3vw, 2.3rem); }
+    .cta-inner p { margin: 0; color: #cbd4db; }
+    .contact { background: var(--paper); }
+    .contact-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 35px; }
+    .contact-card, .contact-form { background: white; padding: 28px; border: 1px solid var(--line); border-radius: 12px; }
+    .contact-item { margin: 20px 0; }
+    .contact-item strong { display: block; margin-bottom: 3px; }
+    .contact-item span { color: var(--muted); }
+    label { display: block; font-weight: 700; font-size: .9rem; margin: 0 0 6px; }
+    input, select, textarea { width: 100%; padding: 12px 13px; border: 1px solid #cfd6dc; border-radius: 7px; font: inherit; margin-bottom: 15px; background: #fff; }
+    textarea { min-height: 110px; resize: vertical; }
+    .form-note { font-size: .8rem; color: var(--muted); margin: 12px 0 0; }
+    footer { background: #0b1117; color: #d0d7dd; padding: 25px 0; font-size: .88rem; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 15px; flex-wrap: wrap; }
+    .mobile-cta { display: none; }
+    @media (max-width: 780px) {
+      .container { width: min(100% - 30px, 1120px); }
+      .topbar-inner { justify-content: center; text-align: center; }
+      .nav { min-height: 68px; }
+      nav { gap: 12px; font-size: .83rem; }
+      nav a:not(.btn) { display: none; }
+      .nav .btn { padding: 10px 12px; }
+      .hero-content { padding: 76px 0 82px; }
+      .service-grid { grid-template-columns: repeat(2, 1fr); }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 25px; }
+      .about-image { min-height: 260px; order: 2; }
+      .cta-inner { align-items: flex-start; flex-direction: column; }
+      section { padding: 58px 0; }
+    }
+    @media (max-width: 480px) {
+      .service-grid { grid-template-columns: 1fr; }
+      .brand { font-size: 1rem; }
+      .brand-mark { width: 39px; height: 39px; }
+      h1 { letter-spacing: -1px; }
+      .hero p { font-size: 1rem; }
+      .trust-row { gap: 10px; flex-direction: column; }
+      .contact-card, .contact-form { padding: 21px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span>Reliable metalwork. Built with care.</span>
+      <span>Serving Nagpur, Maharashtra</span>
+    </div>
+  </div>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="Khade Fabrication home">
+        <span class="brand-mark">KF</span>
+        <span>Khade Fabrication<small>Metalwork & Engineering</small></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a class="btn btn-primary" href="#contact">Get a Quote</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content">
+          <div class="eyebrow">Quality fabrication • Dependable service</div>
+          <h1>Strong work.<br>Made to fit your needs.</h1>
+          <p>From gates and railings to invisible grills, sheds and custom metalwork, Khade Fabrication helps bring your project to life with practical solutions and careful workmanship.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Request a Quote <span aria-hidden="true">→</span></a>
+            <a class="btn btn-outline" href="#services">Explore Services</a>
+          </div>
+          <div class="trust-row">
+            <span>Custom-made solutions</span>
+            <span>Residential & commercial</span>
+            <span>Repair and fabrication</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">What we do</div>
+          <h2>Fabrication services for your project</h2>
+          <p>Whether you need a new installation, a made-to-measure design or a repair, tell us what you have in mind and we’ll discuss the right solution.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service-card"><div class="service-icon" aria-hidden="true">▤</div><h3>Gates & Railings</h3><p>Functional, attractive metal gates and railings designed for homes, buildings and commercial spaces.</p></article>
+          <article class="service-card"><div class="service-icon" aria-hidden="true">⌘</div><h3>Custom Fabrication</h3><p>Made-to-order metalwork planned around your dimensions, design and project requirements.</p></article>
+          <article class="service-card"><div class="service-icon" aria-hidden="true">⚒</div><h3>Welding & Repair</h3><p>Welding, maintenance and repair work to help restore strength and extend the life of metal items.</p></article>
+          <article class="service-card"><div class="service-icon" aria-hidden="true">⌂</div><h3>Sheds & Roofing</h3><p>Metal shed frames and roofing solutions for suitable residential, storage and commercial needs.</p></article>
+          <article class="service-card"><div class="service-icon" aria-hidden="true">▦</div><h3>Invisible Grills</h3><p>Modern safety grill solutions for windows and balconies, with options discussed for your space.</p></article>
+          <article class="service-card"><div class="service-icon" aria-hidden="true">＋</div><h3>Need Something Else?</h3><p>Have a different metalwork idea? Share the details and ask us about a custom solution.</p></article>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="projects" id="projects">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Project inspiration</div>
+          <h2>Fabrication work we can help with</h2>
+          <p>Explore examples of gates, grills, roofing and metalwork. Contact us to discuss a design suited to your space.</p>
+        </div>
+        <div class="project-grid">
+          <article class="project-card">
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80" alt="Modern home exterior inspiration for a custom entrance gate" loading="lazy">
+            <div class="project-copy"><h3>Gates & Entrances</h3><p>Custom entrance ideas for homes and properties.</p></div>
+          </article>
+          <article class="project-card">
+            <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=80" alt="Contemporary home design inspiration" loading="lazy">
+            <div class="project-copy"><h3>Railings & Grills</h3><p>Metalwork ideas for balconies, stairs and windows.</p></div>
+          </article>
+          <article class="project-card">
+            <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=900&q=80" alt="Metal fabrication workshop and welding work" loading="lazy">
+            <div class="project-copy"><h3>Welding & Fabrication</h3><p>Workshop and custom metalwork inspiration.</p></div>
+          </article>
+          <article class="project-card">
+            <img src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=900&q=80" alt="Architectural structure inspiration for sheds and roofing" loading="lazy">
+            <div class="project-copy"><h3>Sheds & Roofing</h3><p>Ideas for covered spaces and steel structures.</p></div>
+          </article>
+          <article class="project-card">
+            <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=80" alt="Modern residential interior and balcony design inspiration" loading="lazy">
+            <div class="project-copy"><h3>Invisible Grill Ideas</h3><p>Modern residential spaces to inspire your grill design.</p></div>
+          </article>
+          <article class="project-card">
+            <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=900&q=80" alt="Modern architecture inspiration for custom projects" loading="lazy">
+            <div class="project-copy"><h3>Custom Projects</h3><p>Tell us about your idea and ask about a tailored solution.</p></div>
+          </article>
+        </div>
+        <p class="photo-note"><strong>Photo note:</strong> These are illustrative inspiration photos, not verified Khade Fabrication projects. Replace them with your own completed-work photos when available.</p>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container about-grid">
+        <div>
+          <div class="eyebrow">Why Khade Fabrication</div>
+          <h2>Practical solutions. Careful workmanship.</h2>
+          <p class="muted">Every project has its own requirements. We aim to understand your needs, discuss the work clearly and provide a fabrication solution suited to your space and purpose.</p>
+          <ul class="check-list">
+            <li>Work tailored to your requirements</li>
+            <li>Clear discussion before work begins</li>
+            <li>Support for new work and repairs</li>
+            <li>Residential and commercial projects</li>
+          </ul>
+        </div>
+        <div class="about-image" role="img" aria-label="Metalworking workshop"></div>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="container cta-inner">
+        <div>
+          <h2>Planning a fabrication project?</h2>
+          <p>Tell us what you need and request a quotation.</p>
+        </div>
+        <a class="btn btn-primary" href="#contact">Talk About Your Project →</a>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Get in touch</div>
+          <h2>Let's discuss your project</h2>
+          <p>Share a few details below. This demo form opens an email draft; add your business email or WhatsApp number before publishing.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h3>Khade Fabrication</h3>
+            <p class="muted">Contact us for service details, project discussions and quotations.</p>
+            <div class="contact-item"><strong>Phone / WhatsApp</strong><span><a href="tel:+919172330835">+91 91723 30835</a> · <a href="https://wa.me/919172330835" target="_blank" rel="noopener">WhatsApp us</a></span></div>
+            <div class="contact-item"><strong>Service area</strong><span>Nagpur, Maharashtra</span></div>
+            <div class="contact-item"><strong>Email</strong><span><a href="mailto:khadefabrication@gmail.com">khadefabrication@gmail.com</a></span></div>
+            <div class="contact-item"><strong>Business hours</strong><span>Please contact us to confirm availability</span></div>
+            <a class="btn btn-primary" href="https://wa.me/919172330835?text=Hello%20Khade%20Fabrication%2C%20I%20would%20like%20a%20quotation." target="_blank" rel="noopener">Enquire on WhatsApp →</a>
+          </div>
+          <form class="contact-form" id="quoteForm">
+            <h3>Request a quotation</h3>
+            <label for="customerName">Your name</label>
+            <input id="customerName" name="customerName" placeholder="Enter your name" required>
+            <label for="customerPhone">Phone number</label>
+            <input id="customerPhone" name="customerPhone" type="tel" placeholder="Enter your phone number" required>
+            <label for="service">Service needed</label>
+            <select id="service" name="service" required>
+              <option value="">Choose a service</option>
+              <option>Gates and railings</option><option>Custom fabrication</option><option>Welding and repair</option><option>Sheds and roofing</option><option>Invisible grills</option><option>Other</option>
+            </select>
+            <label for="details">Project details</label>
+            <textarea id="details" name="details" placeholder="Describe the work, measurements or location"></textarea>
+            <button class="btn btn-primary" type="submit">Prepare Enquiry →</button>
+            <p class="form-note">Before going live, This form opens an email draft addressed to khadefabrication@gmail.com. Make sure an email app is configured on your device.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Khade Fabrication. All rights reserved.</span>
+      <span>Quality metalwork, made for your needs.</span>
+    </div>
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('quoteForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+      const data = new FormData(this);
+      const subject = encodeURIComponent('Fabrication quotation enquiry — ' + data.get('service'));
+      const body = encodeURIComponent(
+        'Name: ' + data.get('customerName') + '\\n' +
+        'Phone: ' + data.get('customerPhone') + '\\n' +
+        'Service: ' + data.get('service') + '\\n' +
+        'Project details: ' + (data.get('details') || 'Not provided')
+      );
+      // Replace the placeholder address below with your business email before publishing.
+      window.location.href = 'mailto:khadefabrication@gmail.com?subject=' + subject + '&body=' + body;
+    });
+  </script>
+</body>
+</html>
